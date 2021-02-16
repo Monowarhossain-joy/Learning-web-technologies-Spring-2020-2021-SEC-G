@@ -1,0 +1,33 @@
+<?php 
+    $students = [
+        0=> [
+            'id'	=>18-38618-2, 
+            'name'	=>'joy', 
+            'dept'	=>'CSE', 
+            'email'	=>'joy@aiub.edu'
+        ],
+        1=> [
+            'id'	=>18-38617-2, 
+            'name'	=>'abir', 
+            'dept'	=>'CSSE', 
+            'email'	=>'abir@aiub.edu'
+        ],
+        2=> [
+            'id'	=>'18-38616-2', 
+            'name'	=>'sumon', 
+            'dept'	=>'SE', 
+            'email'	=>'sumon@aiub.edu'
+        ],
+      
+    ];
+
+    $n = sumon;
+    for($i=0;$i<3;$i++){
+        if($n==$students[$i]['name']){
+            echo('Student ID : '.$students[$i]['id']."\n");
+            echo('Student Name : '.$students[$i]['name']."\n");
+            echo('Depertment Name : '.$students[$i]['dept']."\n");
+            echo('Student Email Address : '.$students[$i]['email']."\n");
+        }
+    }
+?>
