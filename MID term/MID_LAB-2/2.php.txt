@@ -1,0 +1,10 @@
+<?php
+$vat =15;
+
+$vatRate = $vat/100;
+$amount =100;
+
+$total = $vatRate * $amount + $amount; 
+
+echo "VAT = 15% of the amount is =".$total;
+?>
