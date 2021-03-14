@@ -3,37 +3,38 @@
     session_start(); 
 
     if(isset($_POST['submit'])){
+		
 
+        $id = $_POST['id'];
+		$password = ( $_POST['password']);
         $name = $_POST['name'];
-        $userName = $_POST['userName'];
-        $password = ( $_POST['password']);
-        $type = ( $_POST['type']);
+        $usertype = ( $_POST['usertype']);
 
         
 
 
-        if(empty($userName) ||  empty($password)){
+        if(empty($id) ||  empty($password)){
             echo "Can't accept null";
         }else{
 
-            setcookie('name', $name, time()+3600, '/'); 
-            setcookie('userName', $userName, time()+3600, '/');
+            setcookie('id', $id, time()+3600, '/'); 
+            setcookie('name', $name, time()+3600, '/');
             setcookie('password', $password, time()+3600, '/');
-            setcookie('type', $type, time()+3600, '/');
+            setcookie('usertype', $usertype, time()+3600, '/');
 
             
-            if($type == 'user')
+            if($usertype == 'user')
             {
                 $file = fopen('user.txt', 'a');
-                $user = $userName."|".$password."|".$type."\n";
-                fwrite($file, $user);
+                $user = $id."|".$password."|".$name."|".$usertype."\n";
+                fwrite($file, $usertype);
                 fclose($file);
 
             }
             else{
                 $file = fopen('admin.txt', 'a');
                 $user = $userName."|".$password."|".$type."\n";
-                fwrite($file, $user);
+                fwrite($file, $usertype);
                 fclose($file);
             }
 
