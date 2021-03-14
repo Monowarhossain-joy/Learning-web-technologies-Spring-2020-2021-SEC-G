@@ -1,0 +1,52 @@
+<?php
+
+    session_start(); 
+
+    if(isset($_POST['submit'])){
+
+        $name = $_POST['name'];
+        $userName = $_POST['userName'];
+        $password = ( $_POST['password']);
+        $type = ( $_POST['type']);
+
+        
+
+
+        if(empty($userName) ||  empty($password)){
+            echo "Can't accept null";
+        }else{
+
+            setcookie('name', $name, time()+3600, '/'); 
+            setcookie('userName', $userName, time()+3600, '/');
+            setcookie('password', $password, time()+3600, '/');
+            setcookie('type', $type, time()+3600, '/');
+
+            
+            if($type == 'user')
+            {
+                $file = fopen('user.txt', 'a');
+                $user = $userName."|".$password."|".$type."\n";
+                fwrite($file, $user);
+                fclose($file);
+
+            }
+            else{
+                $file = fopen('admin.txt', 'a');
+                $user = $userName."|".$password."|".$type."\n";
+                fwrite($file, $user);
+                fclose($file);
+            }
+
+            echo "Registration Done..!";
+            //header('location:login.html');
+        }
+    }
+
+    else{
+        echo "invalid request";
+        //header('location:login.html'); 
+
+    }
+
+
+?>
