@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In </title>
+    <script>
+    "use strict"
+    
+    function validateForm()
+    {
+       var name= document.forms["myForm"] ["myname"].value;
+       if(name=="")
+       {
+         alert("Name is required");
+         return false;
+       
+       }
+       
+      var password= document.forms["myForm"] ["password"].value;
+       if(password=="")
+       {
+         alert("Password is required");
+         return false;
+       
+       }
+       
+       else if(password.length <=5)
+       {
+          alert("Password must be longer than 5 characters");
+          
+          return false;
+       }
+       
+       var AccountNumber=document.forms["myForm"]["AccountNumber"].value;
+       if(AccountNumber=="")
+       {
+         alert("Account Number is required");
+         return false;
+       }
+       
+       var AccountNumber=document.forms["myForm"]["AccountNumber"].value;
+       if(AccountNumber=="")
+       {
+         alert("Account Number is required");
+         return false;
+       }
+       
+       }
+        
+    </script>
+</head>
+<body bgcolor="skyblue">
+<center>
+<img src="logo.png" width="150px" height="150px" alt="LOGO">
+<body>
+    <h1 id='myid'>Log In Page</h1>
+    <form id="myForm" name="myForm" method="POST" action="../Controller/LogCheck.php" onsubmit="return validateForm()">
+        
+            
+            Name:         <input type="text" name="myname" value=""> <br>
+            password:     <input type="password" name="password" value=""> <br>            
+            Account Number:<input type="number" name="AccountNumber" value=""><br>
+            <input type="submit" name="submit" value="Submit">
+       <div id="mydiv"></div>
+    </form>
+    </center>
+</body>
+</html>

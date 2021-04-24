@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body>
+	<form method="post" action="regCheck.php">
+		<fieldset>
+			<legend>Registration From</legend>
+			<table>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="username" value=""></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" value=""></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" name="repass" value=""></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email" value=""></td>
+				</tr>
+				
+				<td>Gender</td>
+			
+               <td>  
+			   <input type="radio"     name="gender"     value="Male">Male
+               <input type="radio"     name="gender"     value="Female">Female
+               <input type="radio"     name="gender"     value="Other">Other<td>
+			</tr>	
+			<tr>
+				<td>Date of Birth</td>
+			
+					        <td><input type="date" name="dob" id=""> 			
+			</tr>	
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="signup" value="Submit"> 
+						<input type="reset">
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
